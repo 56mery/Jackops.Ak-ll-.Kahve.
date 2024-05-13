@@ -1,0 +1,53 @@
+//Akıllı kahve bardagı
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int YesOrNo(char *cvp,string chr);
+
+class Marvel{
+  public:
+  char cvp[6];
+  
+  void spman(){
+      cout<<"Sectiginiz karakteri 3 farkli kisi mi canlandirdi ?"<<endl;
+      cin>>cvp;
+      YesOrNo(cvp,"Spiderman");
+  }
+  
+  void Hulk(){
+      cout<<"Sectiginiz karakterin sinir proplemleri var mi?"<<endl;
+      cin>>cvp;
+      YesOrNo(cvp,"Hulk");
+  }
+    
+};
+
+int YesOrNo(char *cvp,string chr){
+    if(strcmp(cvp,"evet")==0){
+        cout<<"Sectiginiz karakter "<< chr<<" mi?"<<endl;
+        cin>>cvp;
+         if(strcmp(cvp,"evet")==0){
+           cout<<"Buldumm.Oyunu tekrar oynamak ister misin?";
+           cin>>cvp;
+            if(strcmp(cvp,"evet")==0)  return 40;
+         }
+          else if(strcmp(cvp,"hayir")==0){
+        cout<<"Hadi lan ordan. Avengers izlediğine emin misin?";
+    }
+    }
+   return 0;
+}
+
+int main() {
+    Marvel chr;
+    char cevap[6];
+   cout<<"Merhaba."<<endl<<"Ben akilli kahve bardagi."<<endl<<"Simdi seninle bir oyun oynayacagiz."<<endl<<"Aklindan,sana söyleyecegim Marvel karakterlerinden birini secmeni isteyecigim."<<endl<<"Baslayalim."<<endl<<"Spiderman-Hulk-Iron man-Groot. Bunlardan birini aklinda tut."<<endl;
+   cout<<endl;
+   cout<<"Sectiginiz karakter örümceklerle hasir nesir olurken isirildi mi?"<<endl;
+   cin>>cevap;
+   if(strcmp(cevap,"evet")==0) chr.spman();
+
+    return 0;
+}
